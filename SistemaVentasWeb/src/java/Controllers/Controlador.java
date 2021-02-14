@@ -7,6 +7,8 @@ package Controllers;
 
 import Models.Empleado;
 import Models.EmpleadoDAO;
+import Models.Producto;
+import Models.ProductoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -23,7 +25,10 @@ public class Controlador extends HttpServlet {
 
     Empleado empleado = new Empleado();
     EmpleadoDAO empDAO = new EmpleadoDAO();
+    Producto producto = new Producto();
+    ProductoDAO productoDAO = new ProductoDAO();
     int idEmp;
+    int idProd;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -88,6 +93,52 @@ public class Controlador extends HttpServlet {
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);
         }
         if (menu.equals("Producto")) {
+            switch (accion) {
+                case "listar":
+                    List listaProductos = productoDAO.listar();
+                    request.setAttribute("productos", listaProductos);
+                    break;
+                case "Agregar":
+                    String nombre = request.getParameter("txtNombre");
+                    String precio = request.getParameter("txtPrecio");
+                    String stock = request.getParameter("txtStock");
+                    String estado = request.getParameter("txtEstado");
+                    producto.setNombre(nombre);
+                    producto.setPrecio(producto.ParseDouble(precio));
+                    producto.setStock(producto.ParseInt(stock));
+                    producto.setEstado(estado);
+                    productoDAO.agregar(producto);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=listar").forward(request, response);
+                    break;
+
+                case "Editar":
+                    idProd = Integer.parseInt(request.getParameter("id"));
+                    Producto p = productoDAO.listarId(idProd);
+                    request.setAttribute("producto", p);
+                    break;
+
+                case "Actualizar":
+                    String nombreEdit = request.getParameter("txtNombre");
+                    String precioEdit = request.getParameter("txtPrecio");
+                    String stockEdit = request.getParameter("txtStock");
+                    String estadoEdit = request.getParameter("txtEstado");
+                    producto.setNombre(nombreEdit);
+                    producto.setPrecio(producto.ParseDouble(precioEdit));//Para no generar errores es necesario comprobar que los datos de los inputs sean correctos. Ejemplo for vacio
+                    producto.setStock(producto.ParseInt(stockEdit));//Para no generar errores es necesario comprobar que los datos de los inputs sean correctos. Ejemplo for vacio
+                    producto.setEstado(estadoEdit);
+                    producto.setId(idProd);
+                    productoDAO.actualizar(producto);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=listar").forward(request, response);
+                    break;
+
+                case "eliminar":
+                    idProd = Integer.parseInt(request.getParameter("id"));
+                    productoDAO.eliminar(idProd);
+                    request.getRequestDispatcher("Controlador?menu=Producto&accion=listar").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
             request.getRequestDispatcher("Producto.jsp").forward(request, response);
         }
         if (menu.equals("NuevaVenta")) {

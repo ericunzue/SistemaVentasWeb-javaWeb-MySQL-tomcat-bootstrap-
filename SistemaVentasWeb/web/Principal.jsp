@@ -16,13 +16,13 @@
                             <a class="nav-link text-white" href="#">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none"class="btn btn-outline-secondary text-white" href="Controlador?menu=Producto" target="myFrame">Producto</a>
+                            <a style="margin-left: 10px; border: none"class="btn btn-outline-secondary text-white" href="Controlador?menu=Producto&accion=listar" target="myFrame">Producto</a>
                         </li>
                         <li class="nav-item">
                             <a style="margin-left: 10px; border: none" class="btn btn-outline-secondary text-white" href="Controlador?menu=Empleado&accion=listar" target="myFrame">Empleado</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none" class="btn btn-outline-secondary text-white" href="Controlador?menu=Clientes" target="myFrame">Clientes</a>
+                            <a style="margin-left: 10px; border: none" class="btn btn-outline-secondary text-white" href="Controlador?menu=Clientes&accion=listar" target="myFrame">Clientes</a>
                         </li>
                         <li class="nav-item">
                             <a style="margin-left: 10px; border: none" class="btn btn-outline-secondary text-white" href="Controlador?menu=NuevaVenta" target="myFrame">Nueva Venta</a>
