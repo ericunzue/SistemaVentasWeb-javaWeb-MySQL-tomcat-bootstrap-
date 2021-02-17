@@ -18,19 +18,19 @@
                     <form class="" action="Controlador?menu=Empleado" method="POST">
                         <div class="form-group">
                             <label >DNI</label>
-                            <input class="form-control" value="${empleado.getDni()}" type="text" name="txtDni">                        
+                            <input class="form-control" value="${empleado.getDni()}" required="true" type="text" name="txtDni">                        
                         </div>
                         <div class="form-group">
                             <label >Nombre</label>
-                            <input class="form-control" value="${empleado.getNombre()}" type="text" name="txtNombre"> 
+                            <input class="form-control" value="${empleado.getNombre()}" required="true" type="text" name="txtNombre"> 
                         </div>
                         <div class="form-group">
                             <label >Teléfono</label>
-                            <input class="form-control" value="${empleado.getTel()}" type="text" name="txtTelefono"> 
+                            <input class="form-control" value="${empleado.getTel()}" required="true" type="text" name="txtTelefono"> 
                         </div>
                         <div class="form-group">
                             <label >Estado</label>
-                            <input class="form-control" value="${empleado.getEstado()}" type="text" name="txtEstado"> 
+                            <input class="form-control" value="${empleado.getEstado()}" required="true" type="text" name="txtEstado"> 
                         </div>
                         <div class="form-group">
                             <label >Usuario</label>

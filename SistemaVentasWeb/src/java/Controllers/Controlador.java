@@ -5,6 +5,8 @@
  */
 package Controllers;
 
+import Models.Cliente;
+import Models.ClienteDAO;
 import Models.Empleado;
 import Models.EmpleadoDAO;
 import Models.Producto;
@@ -27,8 +29,11 @@ public class Controlador extends HttpServlet {
     EmpleadoDAO empDAO = new EmpleadoDAO();
     Producto producto = new Producto();
     ProductoDAO productoDAO = new ProductoDAO();
+    Cliente cliente = new Cliente();
+    ClienteDAO clienteDAO = new ClienteDAO();
     int idEmp;
     int idProd;
+    int idCli;
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -89,7 +94,51 @@ public class Controlador extends HttpServlet {
             }
             request.getRequestDispatcher("Empleado.jsp").forward(request, response);
         }
-        if (menu.equals("Cliente")) {
+        if (menu.equals("Clientes")) {
+            switch (accion) {
+                case "listar":
+                    List lista = clienteDAO.listar();
+                    System.out.println(lista);
+                    request.setAttribute("clientes", lista);
+                    break;
+                case "Agregar":
+                    String dni = request.getParameter("txtDni");
+                    String nombre = request.getParameter("txtNombre");
+                    String dir = request.getParameter("txtDireccion");
+                    String estado = request.getParameter("txtEstado");
+                    cliente.setDni(dni);
+                    cliente.setNombre(nombre);
+                    cliente.setDireccion(dir);
+                    cliente.setEstado(estado);
+                    clienteDAO.agregar(cliente);
+                    request.getRequestDispatcher("Controlador?menu=Clientes&accion=listar").forward(request, response);
+                    break;
+                case "Editar":
+                    idCli = Integer.parseInt(request.getParameter("id"));
+                    Cliente c = clienteDAO.listarId(idCli);
+                    request.setAttribute("cliente", c);
+                    break;
+                case "Actualizar":
+                    String dniEdit = request.getParameter("txtDni");
+                    String nombreEdit = request.getParameter("txtNombre");
+                    String dirEdit = request.getParameter("txtDireccion");
+                    String estadoEdit = request.getParameter("txtEstado");
+                    cliente.setDni(dniEdit);
+                    cliente.setNombre(nombreEdit);
+                    cliente.setDireccion(dirEdit);
+                    cliente.setEstado(estadoEdit);
+                    cliente.setId(idCli);
+                    clienteDAO.actualizar(cliente);
+                    request.getRequestDispatcher("Controlador?menu=Clientes&accion=listar").forward(request, response);
+                    break;
+                case "eliminar":
+                    idCli = Integer.parseInt(request.getParameter("id"));
+                    clienteDAO.eliminar(idCli);
+                    request.getRequestDispatcher("Controlador?menu=Clientes&accion=listar").forward(request, response);
+                    break;
+                default:
+                    throw new AssertionError();
+            }
             request.getRequestDispatcher("Clientes.jsp").forward(request, response);
         }
         if (menu.equals("Producto")) {

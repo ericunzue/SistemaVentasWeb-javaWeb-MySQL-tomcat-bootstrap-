@@ -47,14 +47,14 @@ public class ProductoDAO {
     }
 
     public int agregar(Producto nuevo) {
-        String sql = "INSERT INTO producto (Nombres, Precio, Stock, Estado) VALUES(?,?,?,?,)";
+        String sql = "INSERT INTO producto (Nombres, Precio, Stock, Estado) VALUES(?,?,?,?)";
         try {
             con = cn.Conectar();
             ps = con.prepareStatement(sql);
             ps.setString(1, nuevo.getNombre());
             ps.setDouble(2, nuevo.getPrecio());
-            ps.setString(3, nuevo.getEstado());
-            ps.setInt(4, nuevo.getStock());
+            ps.setInt(3, nuevo.getStock());
+            ps.setString(4, nuevo.getEstado());
             ps.executeUpdate();
         } catch (Exception e) {
             System.err.println("Insert error");
