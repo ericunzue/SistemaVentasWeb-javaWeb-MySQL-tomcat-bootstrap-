@@ -8,9 +8,9 @@
 
         <title>Login</title>
     </head>
-    <body>
+    <body class="fondo">
         <div class="container mt-4 col-lg-4">
-            <div class="card col-sm-10">
+            <div class="card col-sm-10 tranparente2 text-white">
                 <div class="card-body">
                     <form class="form-sign" action="Validar" method="POST">
                         <div class="form-group  text-center">
@@ -27,7 +27,7 @@
                             <input type="password" name="txtpass" class="form-control">
                         </div>
                         <div class="d-grid gap-2 mt-2 ">
-                            <input type="submit" name="accion" value="Ingresar" class=" btn btn-secondary text-white" ">
+                            <input type="submit" name="accion" value="Ingresar" class=" btn btn-secondary text-white">
                         </div>
                     </form>
                 </div>

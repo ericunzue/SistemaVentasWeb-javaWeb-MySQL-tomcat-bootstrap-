@@ -7,25 +7,25 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>JSP Page</title>
     </head>
-    <body>
-        <nav class="navbar navbar-expand-lg bg-dark bg-gradient ">
+    <body class="fondo">
+        <nav class="navbar navbar-expand-lg bg-dark bg-gradient tranparente">
             <div class="container-fluid">                           
                 <div class="collapse navbar-collapse justify-content-between" id="navbarNav ">
                     <ul class="navbar-nav ">
-                        <li class="nav-item-active">
-                            <a class="nav-link text-white" href="#">Home</a>
+                        <li class="nav-item">
+                            <a style="" class="btn btn-outline-secondary text-white" href="Controlador?menu=Principal&accion=inicio">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none"class="btn btn-outline-secondary text-white" href="Controlador?menu=Producto&accion=listar" target="myFrame">Producto</a>
+                            <a style="margin-left: 20px"class="btn btn-outline-secondary text-white" href="Controlador?menu=Producto&accion=listar" target="myFrame">Producto</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none" class="btn btn-outline-secondary text-white" href="Controlador?menu=Empleado&accion=listar" target="myFrame">Empleado</a>
+                            <a style="margin-left: 10px" class="btn btn-outline-secondary text-white" href="Controlador?menu=Empleado&accion=listar" target="myFrame">Empleado</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none" class="btn btn-outline-secondary text-white" href="Controlador?menu=Clientes&accion=listar" target="myFrame">Clientes</a>
+                            <a style="margin-left: 10px" class="btn btn-outline-secondary text-white" href="Controlador?menu=Clientes&accion=listar" target="myFrame">Clientes</a>
                         </li>
                         <li class="nav-item">
-                            <a style="margin-left: 10px; border: none" class="btn btn-outline-secondary text-white" href="Controlador?menu=NuevaVenta" target="myFrame">Nueva Venta</a>
+                            <a style="margin-left: 10px" class="btn btn-outline-secondary text-white" href="Controlador?menu=NuevaVenta" target="myFrame">Nueva Venta</a>
                         </li>
                     </ul>
 
@@ -50,9 +50,12 @@
                 </div>
             </div>
         </nav>
-        <div class="mt-2" style="height: 550px">
-            <iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
+        <div class="container-fluid">
+            <div class="col mt-1 rounded"  style="height: 550px">
+                <iframe src="Inicio.jsp" class="rounded" name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
+            </div>
         </div>
+
 
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>

@@ -17,8 +17,12 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>JSP Page</title>
     </head>
-    <body>
-        <div class="d-flex">
+    <body class="tranparente">
+        <h3 class=" text-center">
+
+            <small class="text-white">Producto</small>
+        </h3>
+        <div class="d-flex m-2">
 
             <div class="card col-sm-4 " >
                 <div class="card-body bg-light">
@@ -44,34 +48,38 @@
                     </form>
                 </div>
             </div>
-            <div class=" col-sm-8  ">
-                <table class="table table-light table-hover text-center">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>NOMBRE</th>
-                            <th>PRECIO</th>
-                            <th>STOCK</th>
-                            <th>ESTADO</th>
-                            <th>ACCIONES</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="prod" items="${productos}">
-                            <tr>
-                                <td>${prod.getId()}</td>
-                                <td>${prod.getNombre()}</td>
-                                <td>${prod.getPrecio()}</td>
-                                <td>${prod.getStock()}</td>
-                                <td>${prod.getEstado()}</td>
-                                <td>
-                                    <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&id=${prod.getId()}">Editar</a>
-                                    <a class="btn bg-danger" href="Controlador?menu=Producto&accion=eliminar&id=${prod.getId()}">Eliminar</a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
+            <div class=" col-sm-8 ms-1 ">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-light table-hover text-center">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NOMBRE</th>
+                                    <th>PRECIO</th>
+                                    <th>STOCK</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="prod" items="${productos}">
+                                    <tr>
+                                        <td>${prod.getId()}</td>
+                                        <td>${prod.getNombre()}</td>
+                                        <td>${prod.getPrecio()}</td>
+                                        <td>${prod.getStock()}</td>
+                                        <td>${prod.getEstado()}</td>
+                                        <td>
+                                            <a class="btn btn-warning" href="Controlador?menu=Producto&accion=Editar&id=${prod.getId()}">Editar</a>
+                                            <a class="btn bg-danger" href="Controlador?menu=Producto&accion=eliminar&id=${prod.getId()}">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
 

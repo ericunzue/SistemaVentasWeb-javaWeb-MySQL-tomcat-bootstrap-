@@ -1,8 +1,28 @@
-body{
+/*body{
     background: #536976;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*  background: -webkit-linear-gradient(to right, #292E49, #536976);  /* Chrome 10-25, Safari 5.1-6 */
+/*   background: linear-gradient(to right, #292E49, #536976); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/*}*/
 
+.fondo{
+    background-image: url("../img/fondo2.jpg");
+}
 
+.tranparente{
+
+    background-color: rgba(0, 0, 0, 0);
+}
+.tranparente2{
+
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.round_table {
+    border-collapse:separate;
+    border-spacing: 10;
+    border:solid whitesmoke 1px;
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius: 5px;    
 }
 

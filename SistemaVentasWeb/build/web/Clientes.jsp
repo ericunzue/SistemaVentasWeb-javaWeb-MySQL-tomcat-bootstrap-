@@ -9,9 +9,12 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>JSP Page</title>
     </head>
-    <body>
-        <div class="d-flex">
+    <body class="tranparente">
+        <h3 class=" text-center">
 
+            <small class="text-white">Clientes</small>
+        </h3>
+        <div class="d-flex m-2">
             <div class="card col-sm-4 " >
                 <div class="card-body bg-light">
                     <form class="" action="Controlador?menu=Clientes" method="POST">
@@ -36,35 +39,41 @@
                     </form>
                 </div>
             </div>
-            <div class=" col-sm-8  ">
-                <table class="table table-light table-hover text-center">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>DNI</th>
-                            <th>NOMBRE</th>
-                            <th>DIRECCION</th>
-                            <th>ESTADO</th>
-                            <th>ACCIONES</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="cli" items="${clientes}">
-                            <tr>
-                                <td>${cli.getId()}</td>
-                                <td>${cli.getDni()}</td>
-                                <td>${cli.getNombre()}</td>
-                                <td>${cli.getDireccion()}</td>
-                                <td>${cli.getEstado()}</td>
-                                
-                                <td>
-                                    <a class="btn btn-warning" href="Controlador?menu=Clientes&accion=Editar&id=${cli.getId()}">Editar</a>
-                                    <a class="btn bg-danger" href="Controlador?menu=Clientes&accion=eliminar&id=${cli.getId()}">Eliminar</a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
+
+            <div class=" col-sm-8 ms-1">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-light table-hover text-center">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>DNI</th>
+                                    <th>NOMBRE</th>
+                                    <th>DIRECCION</th>
+                                    <th>ESTADO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="cli" items="${clientes}">
+                                    <tr>
+                                        <td>${cli.getId()}</td>
+                                        <td>${cli.getDni()}</td>
+                                        <td>${cli.getNombre()}</td>
+                                        <td>${cli.getDireccion()}</td>
+                                        <td>${cli.getEstado()}</td>
+
+                                        <td>
+                                            <a class="btn btn-warning" href="Controlador?menu=Clientes&accion=Editar&id=${cli.getId()}">Editar</a>
+                                            <a class="btn bg-danger" href="Controlador?menu=Clientes&accion=eliminar&id=${cli.getId()}">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
             </div>
 
         </div>

@@ -10,8 +10,12 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>JSP Page</title>
     </head>
-    <body>
-        <div class="d-flex">
+    <body class="tranparente">
+        <h3 class=" text-center">
+
+            <small class="text-white">Empleado</small>
+        </h3>
+        <div class="d-flex m-2">
 
             <div class="card col-sm-4 " >
                 <div class="card-body bg-light">
@@ -41,36 +45,40 @@
                     </form>
                 </div>
             </div>
-            <div class=" col-sm-8  ">
-                <table class="table table-light table-hover text-center">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>DNI</th>
-                            <th>NOMBRE</th>
-                            <th>TELÉFONO</th>
-                            <th>ESTADO</th>
-                            <th>USUARIO</th>
-                            <th>ACCIONES</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <c:forEach var="emp" items="${empleados}">
-                            <tr>
-                                <td>${emp.getId()}</td>
-                                <td>${emp.getDni()}</td>
-                                <td>${emp.getNombre()}</td>
-                                <td>${emp.getTel()}</td>
-                                <td>${emp.getEstado()}</td>
-                                <td>${emp.getUser()}</td>
-                                <td>
-                                    <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=${emp.getId()}">Editar</a>
-                                    <a class="btn bg-danger" href="Controlador?menu=Empleado&accion=eliminar&id=${emp.getId()}">Eliminar</a>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                    </tbody>
-                </table>
+            <div class=" col-sm-8  ms-1  ">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-light table-hover text-center">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>DNI</th>
+                                    <th>NOMBRE</th>
+                                    <th>TELÉFONO</th>
+                                    <th>ESTADO</th>
+                                    <th>USUARIO</th>
+                                    <th>ACCIONES</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <c:forEach var="emp" items="${empleados}">
+                                    <tr>
+                                        <td>${emp.getId()}</td>
+                                        <td>${emp.getDni()}</td>
+                                        <td>${emp.getNombre()}</td>
+                                        <td>${emp.getTel()}</td>
+                                        <td>${emp.getEstado()}</td>
+                                        <td>${emp.getUser()}</td>
+                                        <td>
+                                            <a class="btn btn-warning" href="Controlador?menu=Empleado&accion=Editar&id=${emp.getId()}">Editar</a>
+                                            <a class="btn bg-danger" href="Controlador?menu=Empleado&accion=eliminar&id=${emp.getId()}">Eliminar</a>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
 
         </div>

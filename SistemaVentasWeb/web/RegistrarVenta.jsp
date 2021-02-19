@@ -13,10 +13,13 @@
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <title>JSP Page</title>
     </head>
-    <body>
-        <h1 class="display-6 text-white">Nueva venta</h1>
+    <body class="tranparente">
+       <h3 class=" text-center">
 
-        <div class="d-flex">
+            <small class="text-white">Nueva Venta</small>
+        </h3>
+
+        <div class="d-flex m-2">
             <div class="col-sm-4">
                 <div class="card">
                     <form action="Controlador" method="POST">
@@ -63,7 +66,7 @@
                     </form>
                 </div>
             </div>
-            <div class="col-sm-8">
+            <div class="col-sm-8  ms-1">
                 <div class="card">
                     <div class="card-body">
                         <div class="d-flex col-sm-5 ms-auto">
