@@ -19,10 +19,9 @@
 
 .round_table {
     border-collapse:separate;
-    border-spacing: 10;
+    border-spacing: 10pt;
     border:solid whitesmoke 1px;
     border-radius:10px;
     -moz-border-radius:10px;
     -webkit-border-radius: 5px;    
 }
-

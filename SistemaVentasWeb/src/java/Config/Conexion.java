@@ -1,43 +1,40 @@
 package Config;
 
-import java.sql.Connection;
+/*
+This class is made using singleton pattern. Who allows us to make only one instance of the object.
+
+*/
+import java.sql.*;
 import java.sql.DriverManager;
-public class Conexion {
 
-    Connection con;
-    String url = "jdbc:mysql://localhost:3306/bd_ventas";
-    String user = "root";
-    String pass = "";
+public final class Conexion {
 
-    //metodo sin patron singleton    
-    public Connection Conectar() {
+    private static Connection conn = null;
+
+    private Conexion() {
+        String url = "jdbc:mysql://localhost:3306/bd_ventas";
+        String driver = "com.mysql.jdbc.Driver";
+        String user = "root";
+        String pass = "";
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection(url, user, pass);
-        } catch (Exception e) {
+            Class.forName(driver);
+            conn = DriverManager.getConnection(url, user, pass);
+        } catch (ClassNotFoundException | SQLException e) {
         }
-        return con;
+
     }
 
-    //patron singleton
-    //private static Connection cone = null;
+   
+    public static Connection getConnection() {
 
-    /*public static Connection getConnection() {
-        try {
-            if (cone == null) {
-                String driver = "com.mysql.jdbc.Driver"; //el driver varia segun la DB que usemos
-                String url = "jdbc:mysql://localhost:3306/bd_ventas?autoReconnect=true";
-                String pwd = "";
-                String usr = "root";
-                Class.forName(driver);
-                cone = DriverManager.getConnection(url, usr, pwd);
-                System.out.println("Conection Succesfull");
-            }
-        } catch (ClassNotFoundException | SQLException ex) {
-            ex.printStackTrace();
+        if (conn == null) {
+            new Conexion();
+            System.out.println("Conection Succesfull");
         }
-        return cone;
-    }*/
+
+        return conn;
+    }
+
 
 }
