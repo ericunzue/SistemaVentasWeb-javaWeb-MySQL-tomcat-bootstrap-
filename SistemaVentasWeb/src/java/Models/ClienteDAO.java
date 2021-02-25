@@ -17,39 +17,19 @@ import java.util.List;
  * @author e_unz
  */
 public class ClienteDAO {
-
-  
-    Connection conn = Conexion.getConnection();
+        Conexion cn = new Conexion();
+    Connection con;
     PreparedStatement ps;
     ResultSet rs;
     int respuesta;
-
-    public Cliente buscar(String dni) {
-        String sql = "SELECT * FROM cliente WHERE Dni=" + dni;
-        Cliente cli = new Cliente();
-        try {
-
-            ps = conn.prepareStatement(sql);
-            rs = ps.executeQuery();
-            while (rs.next()) {
-                cli.setId(rs.getInt(1));
-                cli.setDni(rs.getString(2));
-                cli.setNombre(rs.getString(3));
-                cli.setDireccion(rs.getString(4));
-                cli.setEstado(rs.getString(4));
-            }
-        } catch (Exception e) {
-        }
-        return cli;
-    }
 
     //Operaciones CRUD
     public List listar() {
         String sql = "SELECT * FROM cliente";
         List<Cliente> listaClientes = new ArrayList<>();
         try {
-
-            ps = conn.prepareStatement(sql);
+            con = cn.Conectar();
+            ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 Cliente cli = new Cliente();
@@ -68,8 +48,8 @@ public class ClienteDAO {
     public int agregar(Cliente nuevo) {
         String sql = "INSERT INTO cliente (Dni, Nombres, Direccion, Estado) VALUES (?,?,?,?)";
         try {
-
-            ps = conn.prepareStatement(sql);
+            con = cn.Conectar();
+            ps = con.prepareStatement(sql);
             ps.setString(1, nuevo.getDni());
             ps.setString(2, nuevo.getNombre());
             ps.setString(3, nuevo.getDireccion());
@@ -77,9 +57,9 @@ public class ClienteDAO {
             ps.executeUpdate();
         } catch (Exception e) {
             System.err.println("Insert error");
-
+          
         }
-
+        
         return respuesta;
     }
 
@@ -87,8 +67,8 @@ public class ClienteDAO {
         Cliente cli = new Cliente();
         String sql = "SELECT * FROM cliente WHERE IdCliente=" + id;
         try {
-
-            ps = conn.prepareStatement(sql);
+            con = cn.Conectar();
+            ps = con.prepareStatement(sql);
             rs = ps.executeQuery();
             while (rs.next()) {
                 cli.setId(rs.getInt(1));
@@ -106,8 +86,8 @@ public class ClienteDAO {
     public int actualizar(Cliente cli) {
         String sql = "UPDATE cliente SET Dni=?, Nombres=?, Direccion=?, Estado=? WHERE IdCliente=?";
         try {
-
-            ps = conn.prepareStatement(sql);
+            con = cn.Conectar();
+            ps = con.prepareStatement(sql);
             ps.setString(1, cli.getDni());
             ps.setString(2, cli.getNombre());
             ps.setString(3, cli.getDireccion());
@@ -123,8 +103,8 @@ public class ClienteDAO {
     public void eliminar(int id) {
         String sql = "DELETE FROM cliente WHERE IdCliente=" + id;
         try {
-
-            ps = conn.prepareStatement(sql);
+            con = cn.Conectar();
+            ps = con.prepareStatement(sql);
             ps.executeUpdate();
         } catch (Exception e) {
         }

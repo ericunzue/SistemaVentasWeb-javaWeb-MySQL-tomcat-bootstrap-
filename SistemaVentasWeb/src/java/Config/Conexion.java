@@ -1,40 +1,43 @@
 package Config;
 
-/*
-This class is made using singleton pattern. Who allows us to make only one instance of the object.
-
-*/
-import java.sql.*;
+import java.sql.Connection;
 import java.sql.DriverManager;
+public class Conexion {
 
-public final class Conexion {
+    Connection con;
+    String url = "jdbc:mysql://localhost:3306/bd_ventas";
+    String user = "root";
+    String pass = "";
 
-    private static Connection conn = null;
-
-    private Conexion() {
-        String url = "jdbc:mysql://localhost:3306/bd_ventas";
-        String driver = "com.mysql.jdbc.Driver";
-        String user = "root";
-        String pass = "";
+    //metodo sin patron singleton    
+    public Connection Conectar() {
 
         try {
-            Class.forName(driver);
-            conn = DriverManager.getConnection(url, user, pass);
-        } catch (ClassNotFoundException | SQLException e) {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection(url, user, pass);
+        } catch (Exception e) {
         }
-
+        return con;
     }
 
-   
-    public static Connection getConnection() {
+    //patron singleton
+    //private static Connection cone = null;
 
-        if (conn == null) {
-            new Conexion();
-            System.out.println("Conection Succesfull");
+    /*public static Connection getConnection() {
+        try {
+            if (cone == null) {
+                String driver = "com.mysql.jdbc.Driver"; //el driver varia segun la DB que usemos
+                String url = "jdbc:mysql://localhost:3306/bd_ventas?autoReconnect=true";
+                String pwd = "";
+                String usr = "root";
+                Class.forName(driver);
+                cone = DriverManager.getConnection(url, usr, pwd);
+                System.out.println("Conection Succesfull");
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            ex.printStackTrace();
         }
-
-        return conn;
-    }
-
+        return cone;
+    }*/
 
 }

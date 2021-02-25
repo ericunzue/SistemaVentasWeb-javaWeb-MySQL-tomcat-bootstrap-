@@ -18,16 +18,15 @@
         <title>JSP Page</title>
     </head>
     <body class="tranparente">
-       
+        <h3 class=" text-center">
+
+            <small class="text-white">Producto</small>
+        </h3>
         <div class="d-flex m-2">
 
-            <div class="card col-sm-4 tranparente2 " >
-                <h3 class=" text-center">
-
-                    <small class="text-white">Carga y modificación</small>
-                </h3>
-                <div class="card-body">
-                    <form class=" text-white" action="Controlador?menu=Producto" method="POST">
+            <div class="card col-sm-4 " >
+                <div class="card-body bg-light">
+                    <form class="" action="Controlador?menu=Producto" method="POST">
                         <div class="form-group">
                             <label >Nombre</label>
                             <input class="form-control" value="${producto.getNombre()}" type="text" name="txtNombre"> 
@@ -50,13 +49,9 @@
                 </div>
             </div>
             <div class=" col-sm-8 ms-1 ">
-                <div class="card tranparente2">
-                    <h3 class=" text-center">
-
-                        <small class="text-white">Lista de Productos</small>
-                    </h3>
+                <div class="card">
                     <div class="card-body">
-                        <table class="table text-center text-white">
+                        <table class="table table-light table-hover text-center">
                             <thead>
                                 <tr>
                                     <th>ID</th>

@@ -12,48 +12,38 @@
     <body class="tranparente">
         <h3 class=" text-center">
 
-            <small class="text-white">Menú Clientes</small>
+            <small class="text-white">Clientes</small>
         </h3>
         <div class="d-flex m-2">
-            <div class="col-sm-4">
-                <div class="card tranparente2  text-white " >
-                     <h3 class=" text-center">
-
-                        <small class="text-white">Agregar y Modificar</small>
-                    </h3>
-                    <div class="card-body">
-                        <form class="" action="Controlador?menu=Clientes" method="POST">
-                            <div class="form-group">
-                                <label >DNI</label>
-                                <input class="form-control" value="${cliente.getDni()}" required="true" type="text" name="txtDni">                        
-                            </div>
-                            <div class="form-group">
-                                <label >Nombre</label>
-                                <input class="form-control" value="${cliente.getNombre()}" required="true" type="text" name="txtNombre"> 
-                            </div>
-                            <div class="form-group">
-                                <label >Dirección</label>
-                                <input class="form-control" value="${cliente.getDireccion()}" required="true" type="text" name="txtDireccion"> 
-                            </div>
-                            <div class="form-group">
-                                <label >Estado</label>
-                                <input class="form-control" value="${cliente.getEstado()}" required="true" type="text" name="txtEstado"> 
-                            </div>
-                            <input type="submit" name="accion" value="Agregar" class="btn btn-secondary mt-2">
-                            <input type="submit" name="accion" value="Actualizar" class="btn btn-success mt-2">
-                        </form>
-                    </div>
+            <div class="card col-sm-4 " >
+                <div class="card-body bg-light">
+                    <form class="" action="Controlador?menu=Clientes" method="POST">
+                        <div class="form-group">
+                            <label >DNI</label>
+                            <input class="form-control" value="${cliente.getDni()}" required="true" type="text" name="txtDni">                        
+                        </div>
+                        <div class="form-group">
+                            <label >Nombre</label>
+                            <input class="form-control" value="${cliente.getNombre()}" required="true" type="text" name="txtNombre"> 
+                        </div>
+                        <div class="form-group">
+                            <label >Dirección</label>
+                            <input class="form-control" value="${cliente.getDireccion()}" required="true" type="text" name="txtDireccion"> 
+                        </div>
+                        <div class="form-group">
+                            <label >Estado</label>
+                            <input class="form-control" value="${cliente.getEstado()}" required="true" type="text" name="txtEstado"> 
+                        </div>
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-secondary mt-2">
+                        <input type="submit" name="accion" value="Actualizar" class="btn btn-success mt-2">
+                    </form>
                 </div>
             </div>
 
             <div class=" col-sm-8 ms-1">
-                <div class="card tranparente2">
-                     <h3 class=" text-center">
-
-                        <small class="text-white">Lista de Clientes</small>
-                    </h3>
-                    <div class="card-body ">
-                        <table class="table table-hover text-center text-white">
+                <div class="card">
+                    <div class="card-body">
+                        <table class="table table-light table-hover text-center">
                             <thead>
                                 <tr>
                                     <th>ID</th>

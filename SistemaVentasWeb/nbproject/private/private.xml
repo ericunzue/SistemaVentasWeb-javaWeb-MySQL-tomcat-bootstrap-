@@ -3,15 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/RegistrarVenta.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/css/style.css</file>
+            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/Principal.jsp</file>
             <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/Empleado.jsp</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/src/java/Models/ClienteDAO.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/RegistrarVenta.jsp</file>
             <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/src/java/Controllers/Controlador.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/src/java/Config/GenerarSerie.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/js/funciones.js</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/src/java/Models/VentaDAO.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/src/java/Models/EmpleadoDAO.java</file>
-            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/src/java/Models/Venta.java</file>
+            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/Inicio.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/Producto.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/Clientes.jsp</file>
+            <file>file:/E:/Documentos/NetBeansProjects/SistemaVentasWeb-javaWeb-MySQL-tomcat-bootstrap-/SistemaVentasWeb/web/index.jsp</file>
         </group>
     </open-files>
 </project-private>
