@@ -7,6 +7,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+      @media print{
+        .busqueda,.btn, .acciones  {
+          display: none;
+        }
+      }
+    </style>
     <title>JSP Page</title>
   </head>
   <body class="tranparente">
@@ -16,7 +23,7 @@
     </h3>
 
     <div class="d-flex m-2">
-      <div class="col-sm-4">
+      <div class="col-sm-4 busqueda" >
         <div class="card tranparente2 text-white">
           <form action="Controlador?menu=NuevaVenta" method="POST">
             <div class="card-body">
@@ -85,7 +92,7 @@
                   <th>Precio</th>
                   <th>Cantidad</th>
                   <th>Subtotal</th>
-                  <th>Acciones</th>
+                  <th class="acciones">Acciones</th>
                 </tr>
               </thead>
               <tbody>
@@ -107,8 +114,8 @@
             </table>
           </div>
           <div class="card-footer d-flex justify-content-between">
-            <div class="col-sm-10">
-              <a class="btn btn-warning"href="Controlador?menu=NuevaVenta&accion=GenerarVenta">Generar venta</a>
+            <div class="col-sm-10 acciones">
+              <a class="btn btn-warning"href="Controlador?menu=NuevaVenta&accion=GenerarVenta" onclick="print()">Generar venta</a>
               <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
             </div>
             <div class="col-sm-2 ms-auto">
